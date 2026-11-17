@@ -73,7 +73,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   const { t } = useLocale();
   return (
-    <footer className="mx-auto max-w-6xl px-4 pb-24 pt-10 text-sm text-muted-foreground md:pb-10">
+    <footer className="mx-auto w-full max-w-6xl px-4 pb-24 pt-10 text-sm text-muted-foreground md:pb-10">
       <div className="flex flex-col items-start justify-between gap-3 border-t-2 border-dashed border-border pt-6 sm:flex-row sm:items-center">
         <Logo />
         <p>{t("footer.note")}</p>

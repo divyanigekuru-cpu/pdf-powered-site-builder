@@ -29,7 +29,7 @@ function shuffle<T>(arr: T[], rand: () => number) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(rand() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
+    [a[i], a[j]] = [a[j]!, a[i]!];
   }
   return a;
 }
@@ -52,7 +52,7 @@ export function buildDailyQuiz(day: string, learnedIds: string[], attempt = 0, c
     )
       .sort((a, b) => Number(b.unit === word.unit) - Number(a.unit === word.unit))
       .slice(0, 3);
-    return { kind: kinds[i % kinds.length], word, options: shuffle([word, ...distractors], rand) };
+    return { kind: kinds[i % kinds.length]!, word, options: shuffle([word, ...distractors], rand) };
   });
 }
 

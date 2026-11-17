@@ -48,7 +48,7 @@ function QuizPage() {
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
 
-  const q = questions[index];
+  const q = questions[Math.min(index, questions.length - 1)]!;
 
   function choose(w: Word) {
     if (picked) return;

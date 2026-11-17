@@ -33,7 +33,7 @@ interface Msg {
   intent?: BuddyIntent;
 }
 
-function reply(intent: BuddyIntent, locale: Locale): { text: string; english?: string } {
+function reply(intent: BuddyIntent, locale: Locale): { text: string; english?: string | undefined } {
   const render = (l: Locale) => {
     const d = STRINGS[l];
     switch (intent.kind) {
@@ -142,7 +142,15 @@ function BuddyPage() {
   );
 }
 
-function BuddyBubble({ text, english, speakText }: { text: string; english?: string; speakText?: string }) {
+function BuddyBubble({
+  text,
+  english,
+  speakText,
+}: {
+  text: string;
+  english?: string | undefined;
+  speakText?: string | undefined;
+}) {
   return (
     <div className="flex items-start gap-3">
       <span className="grid size-9 shrink-0 place-items-center rounded-xl border-2 border-ink bg-accent text-accent-foreground">

@@ -19,7 +19,7 @@ export function dayKey(d: Date = new Date()) {
 }
 
 export function previousDay(day: string) {
-  const [y, m, d] = day.split("-").map(Number);
+  const [y = 1970, m = 1, d = 1] = day.split("-").map(Number);
   return dayKey(new Date(y, m - 1, d - 1));
 }
 

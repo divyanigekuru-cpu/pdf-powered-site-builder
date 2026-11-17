@@ -41,7 +41,7 @@ function LearnPage() {
   const { state } = useProgress();
   const words = wordsInUnit(unit);
   const index = Math.min(i, words.length - 1);
-  const word = words[index];
+  const word = words[index] ?? words[0]!;
 
   const go = (next: number) =>
     navigate({ search: { unit, i: (next + words.length) % words.length }, replace: true, resetScroll: false });

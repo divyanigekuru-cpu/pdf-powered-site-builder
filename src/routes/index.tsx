@@ -91,7 +91,7 @@ function Index() {
           <p className="mt-2 text-muted-foreground">{t("home.tryNowSub")}</p>
         </div>
         <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
-          <WordCard word={WORDS_BY_ID.algorithm} compact />
+          <WordCard word={WORDS_BY_ID["algorithm"]!} compact />
           <GoalMeter className="h-fit" />
         </div>
       </section>
