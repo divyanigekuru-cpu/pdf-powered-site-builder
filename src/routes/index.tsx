@@ -79,13 +79,16 @@ function Index() {
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-md">
-            <img
-              src={heroImg}
-              alt="A student in a hoodie with earphones, in front of large Telugu, Hindi and English letters"
-              width={1024}
-              height={1024}
-              className="sticker aspect-square w-full object-cover"
-            />
+            <div className="sticker relative aspect-square overflow-hidden">
+              <img
+                src={heroImg}
+                alt="A student in a hoodie with earphones, in front of large Telugu, Hindi and English letters"
+                width={1024}
+                height={1024}
+                className="h-full w-full object-cover grayscale contrast-110"
+              />
+              <div aria-hidden className="pointer-events-none absolute inset-0 bg-accent mix-blend-color" />
+            </div>
             <div className="absolute -bottom-5 -left-4 rotate-[-4deg] rounded-xl border-2 border-ink bg-accent px-4 py-2 font-display font-bold text-accent-foreground shadow-stamp">
               Algorithm = క్రమసూత్ర పద్ధతి
             </div>
