@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Ear, Languages, ListChecks, Mic } from "lucide-react";
-import heroImg from "@/assets/hero-student.jpg";
+import heroImg from "@/assets/hero-student-genz.jpg";
+import doodlesBg from "@/assets/genz-doodles-bg.jpg";
 import { Bi } from "@/components/app/Bi";
 import { GoalMeter } from "@/components/app/GoalMeter";
 import { WordCard } from "@/components/app/WordCard";
@@ -45,8 +46,17 @@ function Index() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-hero border-b-2 border-ink">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-[1.15fr_1fr] md:py-20">
+      <section className="relative overflow-hidden border-b-2 border-ink">
+        <img
+          src={doodlesBg}
+          alt=""
+          aria-hidden
+          width={1920}
+          height={1088}
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-55"
+        />
+        <div className="bg-hero pointer-events-none absolute inset-0" aria-hidden />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 md:grid-cols-[1.15fr_1fr] md:py-20">
           <div className="animate-rise">
             <p className="inline-block rounded-full border-2 border-ink bg-card px-3 py-1 text-sm font-semibold shadow-stamp-sm">
               {t("hero.kicker")}
@@ -72,13 +82,16 @@ function Index() {
           <div className="relative mx-auto w-full max-w-md">
             <img
               src={heroImg}
-              alt="A student from a village practising English words on his phone"
+              alt="A student in a lavender hoodie talking on his phone with Telugu, Hindi and English speech bubbles"
               width={1024}
               height={1024}
               className="sticker aspect-square w-full animate-float object-cover"
             />
             <div className="absolute -bottom-5 -left-4 rotate-[-4deg] rounded-xl border-2 border-ink bg-accent px-4 py-2 font-display font-bold text-accent-foreground shadow-stamp">
               Algorithm = క్రమసూత్ర పద్ధతి
+            </div>
+            <div className="absolute -top-4 -right-3 rotate-[6deg] rounded-full border-2 border-ink bg-card px-3 py-1 text-sm font-bold shadow-stamp-sm">
+              ✨ main character energy
             </div>
           </div>
         </div>
